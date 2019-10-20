@@ -1,1 +1,1 @@
-# Design of Computational Optimization algorithms
+# Design of Computational Optimization Algorithms
