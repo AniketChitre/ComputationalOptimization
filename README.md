@@ -1,3 +1,5 @@
 # Design of Computational Optimization Algorithms
 
-$$ E = mc^2 $$
+\begin{equation}
+ E = mc^2 $$
+\end{equation}
