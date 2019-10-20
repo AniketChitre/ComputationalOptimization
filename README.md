@@ -8,5 +8,11 @@ Objective is to have weekly project goals exploring new ideas in the field.
 
 ## Week 1 
 
+Goal to code to local search algorithms: 
+- Simulated annealing algorithm 
+- Finite differences method 
 
+And implement them on two test-functions: 
+- Simple sum-of-squares function 
+- Rosenbrock function 
 
