@@ -8,7 +8,7 @@ Objective is to have weekly project goals exploring new ideas in the field.
 
 ## Week 1 
 
-Goal to code to local search algorithms: 
+Goal to code two local search algorithms: 
 - Simulated annealing algorithm 
 - Finite differences method 
 
