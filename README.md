@@ -13,6 +13,6 @@ Goal to code to local search algorithms:
 - Finite differences method 
 
 And implement them on two test-functions: 
-- Simple sum-of-squares function 
-- Rosenbrock function 
+- Simple sum-of-squares function (convex)
+- Rosenbrock function (non-convex) 
 
