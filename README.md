@@ -2,7 +2,7 @@
 
 ### About Me and Project Scope
 
-Final-year MEng Chemical Engineering undergraduate at Imperial College London interested in optimization and machine learning. Working under the supervision of Dr Antonio Del Rio Chanona on this side-project to introduce myself to Python programming and further explore optimization, especially computational techniques through designing computational optimization algorithms.  
+Final-year MEng Chemical Engineering undergraduate at Imperial College London interested in optimization and machine learning. Working under the supervision of Dr Antonio Del Rio Chanona on this side-project to introduce myself to Python programming and further explore optimization, especially computational techniques. 
 
 Objective is to have weekly project goals exploring new ideas in the field. 
 
