@@ -1,9 +1,7 @@
 # Design of Computational Optimization Algorithms
 
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=E%3Dmc%5E%7B2%7D&bc=White&fc=Black&im=tif&fs=12&ff=arev&edit=0" align="center" border="0" alt="E=mc^{2}" width="" height="" />
-
-
+<a href="https://www.codecogs.com/eqnedit.php?latex=$$&space;f^{'}(x)&space;=&space;\lim_{h\rightarrow&space;0}&space;\frac{f(x&plus;h)&space;-&space;f(x)}{h}&space;$$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$$&space;f^{'}(x)&space;=&space;\lim_{h\rightarrow&space;0}&space;\frac{f(x&plus;h)&space;-&space;f(x)}{h}&space;$$" title="$$ f^{'}(x) = \lim_{h\rightarrow 0} \frac{f(x+h) - f(x)}{h} $$" /></a>
 
 
 
