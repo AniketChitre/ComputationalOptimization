@@ -9,8 +9,8 @@ Objective is to have weekly project goals exploring new ideas in the field.
 ## Week 1 
 
 Goal to code two local search algorithms in 2d: 
-- Simulated annealing algorithm 
-- Finite differences method 
+- Simulated annealing 
+- Gradient descent 
 
 And implement them on two test-functions: 
 - Simple sum-of-squares function (convex)
