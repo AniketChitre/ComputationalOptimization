@@ -28,7 +28,7 @@ The week 2 code file builds upon the computational optimization techniques explo
 
 ## Week 3
 
-Goal is to implement the Adam optimization algorithm - the key features of this algorithm is: 
+Goal is to implement the "Adam" (adaptive moment estimation) optimization algorithm - the key features of this algorithm is: 
 - It is a combination of gradient descent with momentum and RMSprop algorithms 
 
 
