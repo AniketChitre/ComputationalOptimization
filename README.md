@@ -20,7 +20,7 @@ And implement them on two test-functions:
 
 The week 2 code file builds upon the computational optimization techniques explored in week 1 to: 
 - Vectorise the gradient descent and simulated annealing algorithms to higher dimensions (i.e. extending them from taking an input of a 2d vector to being able to process a n-dimension vector/function) 
-- Improved the gradient descent algorithm through introducing backtracking - this involves adjusting the "alpha" (learning rate) in the algorithm such that the result from the next iteration is always better than the previous one in the gradient descent algorithm 
+- Improve the gradient descent algorithm through introduction of "backtracking" - this involves adjusting the "alpha" (learning rate) in the algorithm such that the result from the next iteration is always better than the previous one 
 - Visualise some analysis of the algorithms. For example, the figure on the left shows how the output of the simulated annealing behaves as a function of the number of iterations for a minimisation problem. And the figure to its right shows how a 2d search space is explored by a gradient descent algorithm.
 
 
