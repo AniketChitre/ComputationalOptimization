@@ -8,7 +8,7 @@ Objective is to have weekly project goals exploring new ideas in the field.
 
 ## Week 1 
 
-Goal to code two local search algorithms: 
+Goal to code two local search algorithms in 2d: 
 - Simulated annealing algorithm 
 - Finite differences method 
 
@@ -18,4 +18,12 @@ And implement them on two test-functions:
 
 ## Week 2 
 
-![](Images/gradient_descent_search_space.png)
+The week 2 code file builds upon the computational optimization techniques explored in week 1 to: 
+- Vectorise the gradient descent and simulated annealing algorithms to higher dimensions (i.e. extending them from taking an input of a 2d vector to being able to process a n-dimension vector/function) 
+- Improved the gradient descent algorithm through introducing backtracking - this involves adjusting the "alpha" (learning rate) in the algorithm such that the result from the next iteration is always better than the previous one in the gradient descent algorithm 
+- Visualised some analysis of the algorithms. For example, the figure on the left shows how the output of the simulated annealing behaves as a function of the number of iterations for a minimisation problem. And the figure to its right shows how a 2d search space is explored by a gradient descent algorithm.
+
+
+![](Images/Simulated_annealing.png) ![](Images/gradient_descent_search_space.png)
+
+  
