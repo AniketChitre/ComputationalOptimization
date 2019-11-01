@@ -26,4 +26,9 @@ The week 2 code file builds upon the computational optimization techniques explo
 
 ![](Images/Simulated_annealing.png) ![](Images/gradient_descent_search_space.png)
 
-  
+## Week 3
+
+Goal is to implement the Adam optimization algorithm - the key features of this algorithm is: 
+- It is a combination of gradient descent with momentum and RMSprop algorithms 
+
+
