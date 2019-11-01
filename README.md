@@ -16,3 +16,6 @@ And implement them on two test-functions:
 - Simple sum-of-squares function (convex)
 - Rosenbrock function (non-convex) 
 
+## Week 2 
+
+![](Images/gradient_descent_search_space.png)
