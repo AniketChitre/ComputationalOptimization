@@ -28,7 +28,6 @@ The week 2 code file builds upon the computational optimization techniques explo
 
 ## Week 3
 
-Goal is to implement the "Adam" (adaptive moment estimation) optimization algorithm - the key features of this algorithm is: 
-- It is a combination of gradient descent with momentum and RMSprop algorithms 
+Implemented the "Adam" (adaptive moment estimation) algorithm - this is a combination of the gradient descent with momentum and RMSprop algorithms. (Additionally, backtracking has been included to appropriately adjust the learning rate, alpha). Algorithm shows significantly improved performance than a simple gradient descent algorithm (even with backtracking), as illustrated by convergence to the (1,1) minima on the Rosenbrock test function in the figure below: 
 
-
+![](Images/iteration_path_contour_plot.png)
