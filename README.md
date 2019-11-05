@@ -71,7 +71,7 @@ The times 2 ensuring alpha doesn't only decrease, as the trade-off of too small 
 
 ### Adam Optimisation
 
-Implemented the "Adam" (adaptive moment estimation) algorithm - this is a combination of the gradient descent with momentum and RMSprop algorithms. (Additionally, backtracking has been included to appropriately adjust the learning rate, alpha). 
+Implemented the "Adam" (adaptive moment estimation) algorithm - this is a combination of the gradient descent with momentum and RMSprop algorithms. (Additionally, backtracking has been included.)
 
 The key concepts behind Adam can be summarised in the following 3 equations: 
 
