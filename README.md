@@ -79,7 +79,7 @@ The key concepts behind Adam can be summarised in the following 3 equations:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=SdX&space;=&space;\beta_2&space;\cdot&space;SdX&space;&plus;&space;(1-\beta_2)&space;\cdot&space;dX^2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?SdX&space;=&space;\beta_2&space;\cdot&space;SdX&space;&plus;&space;(1-\beta_2)&space;\cdot&space;dX^2" title="SdX = \beta_2 \cdot SdX + (1-\beta_2) \cdot dX^2" /></a>
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\{&space;X_{t&plus;1}&space;=&space;X&space;-&space;\alpha&space;(\frac{VdX}{\sqrt{SdX}&plus;\epsilon})\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\{&space;X_{t&plus;1}&space;=&space;X&space;-&space;\alpha&space;(\frac{VdX}{\sqrt{SdX}&plus;\epsilon})\}" title="\{ X_{t+1} = X - \alpha (\frac{VdX}{\sqrt{SdX}+\epsilon})\}" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\{&space;X_{t&plus;1}&space;=&space;X_t&space;-&space;\alpha&space;(\frac{VdX}{\sqrt{SdX}&plus;\epsilon})\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\{&space;X_{t&plus;1}&space;=&space;X_t&space;-&space;\alpha&space;(\frac{VdX}{\sqrt{SdX}&plus;\epsilon})\}" title="\{ X_{t+1} = X_t - \alpha (\frac{VdX}{\sqrt{SdX}+\epsilon})\}" /></a>
 
 The 1st equation is an implementation of gradient descent with momentum - where exponetially weighted averaging is used. Then the 2nd equation is an implementation of the RMSprop algorithm. Finally equation 3 combines these two techniques into the gradient descent update step. The algorithm loops through these computations for n iterations. 
 
