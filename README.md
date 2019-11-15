@@ -87,3 +87,39 @@ Adam shows significantly improved performance than a simple gradient descent alg
 
 ![](Images/iteration_path_contour_plot.png)
 
+## Week 4/5
+
+### BFGS Algorithm 
+
+Implemented the BFGS algorithm - this is a quasi-Newton method. Along the line of algorithms coded in the previous weeks (gradient descent and the Adam algorithm) the BFGS method also employs a line search strategy. This means the algorithm chooses a direction to search along to find a new iterate with a lower objective function value. 
+
+The BFGS algorithm is a development on Newton's method which can be summarised with the equation: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=X_{k&plus;1}=X_{k}&space;-&space;\nabla_{xx}^2(X_k)\nabla&space;f(X_k)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{k&plus;1}=X_{k}&space;-&space;\nabla_{xx}^2(X_k)\nabla&space;f(X_k)" title="X_{k+1}=X_{k} - \nabla_{xx}^2(X_k)\nabla f(X_k)" /></a>
+
+A significant drawback, however, of Newton's method is that it is computationally intesive - both computing the Hessian and inverting that result is computationally expensive. The BFGS algorithm implemented is more efficient as it avoids both of these operations. The BFGS approach uses the structure: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=X_{k&plus;1}=X_{k}&space;-&space;B_k^{-1}\nabla&space;f(X_k)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?X_{k&plus;1}=X_{k}&space;-&space;B_k^{-1}\nabla&space;f(X_k)" title="X_{k+1}=X_{k} - B_k^{-1}\nabla f(X_k)" /></a>
+
+where the BFGS formula for updating the Hessian approaximation is: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=B_{k&plus;1}&space;=&space;B_k&space;-&space;\frac{B_{k}S_{k}S_{k}^TB_{k}}{S_{k}^TB_kS_k}&space;&plus;&space;\frac{Y_{k}Y_{k}^T}{Y_{k}^TS_k}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?B_{k&plus;1}&space;=&space;B_k&space;-&space;\frac{B_{k}S_{k}S_{k}^TB_{k}}{S_{k}^TB_kS_k}&space;&plus;&space;\frac{Y_{k}Y_{k}^T}{Y_{k}^TS_k}" title="B_{k+1} = B_k - \frac{B_{k}S_{k}S_{k}^TB_{k}}{S_{k}^TB_kS_k} + \frac{Y_{k}Y_{k}^T}{Y_{k}^TS_k}" /></a>
+
+with: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=S_k&space;=&space;X_{k&plus;1}&space;-&space;X_k&space;\&space;and&space;\&space;Y_k&space;=&space;\nabla&space;f_{k&plus;1}&space;-&space;\nabla&space;f_k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S_k&space;=&space;X_{k&plus;1}&space;-&space;X_k&space;\&space;and&space;\&space;Y_k&space;=&space;\nabla&space;f_{k&plus;1}&space;-&space;\nabla&space;f_k" title="S_k = X_{k+1} - X_k \ and \ Y_k = \nabla f_{k+1} - \nabla f_k" /></a>
+
+However, this would still require inverting a matrix so the BFGS algorithm proposes the formulation:
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=let&space;\&space;\&space;B_k^{-1}&space;=&space;H_k" target="_blank"><img src="https://latex.codecogs.com/gif.latex?let&space;\&space;\&space;B_k^{-1}&space;=&space;H_k" title="let \ \ B_k^{-1} = H_k" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\rho_k&space;=&space;\frac{1}{Y_k^TS_k}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rho_k&space;=&space;\frac{1}{Y_k^TS_k}" title="\rho_k = \frac{1}{Y_k^TS_k}" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=H_{k&plus;1}&space;=&space;(I&space;-&space;\rho_kS_kY_k^T)H_k(I&space;-&space;\rho_kY_kS_k^T)&space;&plus;&space;\rho_kS_kS_k^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_{k&plus;1}&space;=&space;(I&space;-&space;\rho_kS_kY_k^T)H_k(I&space;-&space;\rho_kY_kS_k^T)&space;&plus;&space;\rho_kS_kS_k^T" title="H_{k+1} = (I - \rho_kS_kY_k^T)H_k(I - \rho_kY_kS_k^T) + \rho_kS_kS_k^T" /></a>
+
+These equations are implemented in the week 4/5 code. To actually implement this algorithm one needs an initial approximation for <a href="https://www.codecogs.com/eqnedit.php?latex=H_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_0" title="H_0" /></a>. I have used a basic gradient descent step for the first 2 iterations as a "warming up phase" before transitioning into the BFGS algorithm. 
+
+The below plots show the performance of this algorithm vs the Adam algorithm tested on the Rosenbrock function, which has a global minima evaluating to 0. The left figure represents how the objective function is minimised for a 2d test function, with starting point X0 = (4,4) and the right one is an extension to higher dimensions (4d), with a starting point X0 = (2,2,2,2)
+
+![](Images/Simulated_annealing.png) ![](Images/gradient_descent_search_space.png)
+
