@@ -121,5 +121,5 @@ These equations are implemented in the week 4/5 code. To actually implement this
 
 The below plots show the performance of this algorithm vs the Adam algorithm tested on the Rosenbrock function, which has a global minima evaluating to 0. The left figure represents how the objective function is minimised for a 2d test function, with starting point X0 = (4,4) and the right one is an extension to higher dimensions (4d), with a starting point X0 = (2,2,2,2)
 
-![](Images/Simulated_annealing.png) ![](Images/gradient_descent_search_space.png)
+![](Images/BFGSvAdam_2d_X0=(4,4).png) ![](Images/BFGSvAdam_4d_X0=(2,2,2,2).png)
 
