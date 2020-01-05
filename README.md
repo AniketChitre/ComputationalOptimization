@@ -125,6 +125,8 @@ The below plots show the performance of this algorithm vs the Adam algorithm tes
 
 ## Milestone 5 
 
+### Dynamic Optimisation 
+
 This code looks at incorporating one of the above designed algorithms to simulate a dynamic optimisation of a bioprocess control problem. The kinetic model for the bioprocess was as follows: 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{dC_x}{dt}&space;=&space;\frac{u_m&space;L_I}{L_I&space;&plus;&space;k_s&space;&plus;&space;\frac{L_I^2}{k_i}}&space;C_x&space;\frac{C_n}{C_n&space;&plus;&space;K_N}&space;-&space;u_d&space;C_x" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{dC_x}{dt}&space;=&space;\frac{u_m&space;L_I}{L_I&space;&plus;&space;k_s&space;&plus;&space;\frac{L_I^2}{k_i}}&space;C_x&space;\frac{C_n}{C_n&space;&plus;&space;K_N}&space;-&space;u_d&space;C_x" title="\frac{dC_x}{dt} = \frac{u_m L_I}{L_I + k_s + \frac{L_I^2}{k_i}} C_x \frac{C_n}{C_n + K_N} - u_d C_x" /></a>
