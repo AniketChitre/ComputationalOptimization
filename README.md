@@ -138,6 +138,7 @@ C represents concentrations with x the biomass, n the nutrient media and qc the 
 This kinetic model is solved by numerical integration in the Python script to simulate the bioprocess. The entire time-horizon is sub-divided into 4 for this test problem for dynamic optimisation of the light intensity and nutrient feed flowrate to be computed as piecewise-constant control actions. The selected algorithm for this dynamic optimisation is simulated annealing, as versus all the other local search algorithms this one is a global solver. This algorithm showed the best performance, hence, is the one implemented in the milestone 5 code. So far the algorithms from milestones 1-4 demonstrate unconstrained optimisation, however, to obtain physically sensible results constraints were incorporated into the simulated annealing code. The actual limits used were: 
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=0.0&space;\leq&space;FC_n&space;\leq&space;3.0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0.0&space;\leq&space;FC_n&space;\leq&space;3.0" title="0.0 \leq FC_n \leq 3.0" /></a>
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=100&space;\leq&space;L_I&space;\leq&space;300" target="_blank"><img src="https://latex.codecogs.com/gif.latex?100&space;\leq&space;L_I&space;\leq&space;300" title="100 \leq L_I \leq 300" /></a>
 
 As the dynamic optimisation model is run the following results can be seen. The animation below is a run-through of the adjustments the simulated annealing algorithm is making on each iteration. 
