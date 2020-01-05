@@ -1,11 +1,10 @@
-# Design of Computational Optimization Algorithms
+# Design of Computational Optimisation Algorithms
 ### About Me and Project Scope
 
-Final-year MEng Chemical Engineering undergraduate at Imperial College London interested in optimization and machine learning. Working under the supervision of Dr Antonio Del Rio Chanona on this side-project to introduce myself to Python programming and further explore optimization, especially computational techniques. 
+Final-year MEng Chemical Engineering undergraduate at Imperial College London working on this side-project under the supervision of Dr Antonio Del Rio Chanona during Oct-Dec 2019. The purpose of this project is to introduce myself to Python programming and explore various computational optimisation technqiues. The following algorithms have been coded: Simulated Annealing, Gradient Descent, Adam, BFGS and Dynamic Optimisation. My repository is broken down into different "milestones" representing the chronological order in which this work develops. Some basic background and discussion can be found in this ReadMe complementing the attached Python files. 
 
-Objective is to have weekly project goals exploring new ideas in the field. 
 
-## Week 1 
+## Milestone 1  
 
 Goal to code two local search algorithms in 2d: 
 - Simulated annealing 
@@ -43,9 +42,9 @@ The gradient descent algorithm works on the principle that the gradient of a sca
 
 Here alpha is the "learning rate" and the negative sign shows us we are travelling towards the minimum along the steepest path of gradient descent. 
 
-## Week 2 
+## Milestone 2 
 
-The week 2 code file builds upon the computational optimization techniques explored in week 1 to: 
+The milestone 2 code file builds upon the computational optimization techniques explored in milestone 1 to: 
 - Vectorise the gradient descent and simulated annealing algorithms to higher dimensions (i.e. extending them from taking an input of a 2d vector to being able to process a n-dimension vector/function) 
 - Improve the gradient descent algorithm through introduction of "backtracking" - this involves adjusting the "alpha" (learning rate) in the algorithm such that the result from the next iteration is always better than the previous one 
 - Visualise some analysis of the algorithms. For example, the figure on the left shows how the output of the simulated annealing algorithm behaves as a function of the number of iterations for a minimisation problem. And the figure to its right shows how a 2d search space is explored by a gradient descent algorithm.
@@ -60,14 +59,14 @@ With a small enough learning rate (alpha) the objective function should monotoni
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=f(X_{t&plus;1})&space;-&space;f(X_t)&space;>&space;0&space;\rightarrow&space;\alpha&space;=&space;\alpha/2" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f(X_{t&plus;1})&space;-&space;f(X_t)&space;>&space;0&space;\rightarrow&space;\alpha&space;=&space;\alpha/2" title="f(X_{t+1}) - f(X_t) > 0 \rightarrow \alpha = \alpha/2" /></a>
 
-Alpha is halved until the updated solution is better than the original trial solution. The week 2 code file presented stores the history of "successful" alphas used and the starting trial value for alpha for the next iteration is taken as:
+Alpha is halved until the updated solution is better than the original trial solution. The milestone 2 code file presented stores the history of "successful" alphas used and the starting trial value for alpha for the next iteration is taken as:
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=2&space;\cdot&space;\mu_{alpha\&space;history&space;}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?2&space;\cdot&space;\mu_{alpha\&space;history&space;}" title="2 \cdot \mu_{alpha\ history }" /></a> 
 
 The times 2 ensuring alpha doesn't only decrease, as the trade-off of too small an alpha is that it can take too many iterations for the algorithm to reach the solution.
 
 
-## Week 3
+## Milestone 3 
 
 ### Adam Optimisation
 
@@ -87,7 +86,7 @@ Adam shows significantly improved performance than a simple gradient descent alg
 
 ![](Images/iteration_path_contour_plot.png)
 
-## Week 4/5
+## Milestone 4 
 
 ### BFGS Algorithm 
 
@@ -117,9 +116,13 @@ However, this would still require inverting a matrix so the BFGS algorithm propo
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=H_{k&plus;1}&space;=&space;(I&space;-&space;\rho_kS_kY_k^T)H_k(I&space;-&space;\rho_kY_kS_k^T)&space;&plus;&space;\rho_kS_kS_k^T" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_{k&plus;1}&space;=&space;(I&space;-&space;\rho_kS_kY_k^T)H_k(I&space;-&space;\rho_kY_kS_k^T)&space;&plus;&space;\rho_kS_kS_k^T" title="H_{k+1} = (I - \rho_kS_kY_k^T)H_k(I - \rho_kY_kS_k^T) + \rho_kS_kS_k^T" /></a>
 
-These equations are implemented in the week 4/5 code. To actually implement this algorithm one needs an initial approximation for <a href="https://www.codecogs.com/eqnedit.php?latex=H_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_0" title="H_0" /></a>. I have used a basic gradient descent step for the first 2 iterations as a "warming up phase" before transitioning into the BFGS algorithm. 
+These equations are implemented in the milestone 4 code. To actually implement this algorithm one needs an initial approximation for <a href="https://www.codecogs.com/eqnedit.php?latex=H_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?H_0" title="H_0" /></a>. I have used a basic gradient descent step for the first 2 iterations as a "warming up phase" before transitioning into the BFGS algorithm. 
 
 The below plots show the performance of this algorithm vs the Adam algorithm tested on the Rosenbrock function, which has a global minima evaluating to 0. The left figure represents how the objective function is minimised for a 2d test function, with starting point X0 = (4,4) and the right one is an extension to higher dimensions (4d), with a starting point X0 = (2,2,2,2)
 
 ![](Images/BFGSvAdam_2d_X0=(4,4).png) ![](Images/BFGSvAdam_4d_X0=(2,2,2,2).png)
 
+
+## Milestone 5 
+
+![](Images/BioprocessDynamicOptimisation.GIF)
