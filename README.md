@@ -1,7 +1,7 @@
 # Design of Computational Optimisation Algorithms
 ### About Me and Project Scope
 
-Final-year MEng Chemical Engineering undergraduate at Imperial College London working on this side-project under the supervision of Dr Antonio Del Rio Chanona during Oct-Dec 2019. The purpose of this project is to introduce myself to Python programming and explore various computational optimisation technqiues. The following algorithms have been coded: Simulated Annealing, Gradient Descent, Adam, BFGS and Dynamic Optimisation. My repository is broken down into different "milestones" representing the chronological order in which this work develops. Some basic background and discussion can be found in this ReadMe complementing the attached Python files. 
+Final-year MEng Chemical Engineering undergraduate at Imperial College London working on this side-project under the supervision of Dr Antonio Del Rio Chanona during Oct-Dec 2019. The purpose of this project is to introduce myself to Python programming and explore various computational optimisation technqiues. The following algorithms have been coded: Simulated Annealing, Gradient Descent, Adam, BFGS and Dynamic Optimisation. My repository is broken down into different "milestones" representing the chronological order in which this work was developed. Some basic background and discussion can be found in this ReadMe complementing the attached Python files. 
 
 
 ## Milestone 1  
@@ -124,5 +124,22 @@ The below plots show the performance of this algorithm vs the Adam algorithm tes
 
 
 ## Milestone 5 
+
+This code looks at incorporating one of the above designed algorithms to simulate a dynamic optimisation of a bioprocess control problem. The kinetic model for the bioprocess was as follows: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{dC_x}{dt}&space;=&space;\frac{u_m&space;L_I}{L_I&space;&plus;&space;k_s&space;&plus;&space;\frac{L_I^2}{k_i}}&space;C_x&space;\frac{C_n}{C_n&space;&plus;&space;K_N}&space;-&space;u_d&space;C_x" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{dC_x}{dt}&space;=&space;\frac{u_m&space;L_I}{L_I&space;&plus;&space;k_s&space;&plus;&space;\frac{L_I^2}{k_i}}&space;C_x&space;\frac{C_n}{C_n&space;&plus;&space;K_N}&space;-&space;u_d&space;C_x" title="\frac{dC_x}{dt} = \frac{u_m L_I}{L_I + k_s + \frac{L_I^2}{k_i}} C_x \frac{C_n}{C_n + K_N} - u_d C_x" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{dC_n}{dt}&space;=&space;-&space;Y_{nx}&space;u_m&space;\frac{L_I}{L_I&space;&plus;&space;k_s&space;&plus;&space;\frac{L_I^2}{k_i}}&space;C_x&space;\frac{C_n}{C_n&space;&plus;&space;K_N}&space;&plus;&space;FC_n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{dC_n}{dt}&space;=&space;-&space;Y_{nx}&space;u_m&space;\frac{L_I}{L_I&space;&plus;&space;k_s&space;&plus;&space;\frac{L_I^2}{k_i}}&space;C_x&space;\frac{C_n}{C_n&space;&plus;&space;K_N}&space;&plus;&space;FC_n" title="\frac{dC_n}{dt} = - Y_{nx} u_m \frac{L_I}{L_I + k_s + \frac{L_I^2}{k_i}} C_x \frac{C_n}{C_n + K_N} + FC_n" /></a>
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{dC_{qc}}{dt}&space;=&space;k_m&space;\frac{L_I}{L_I&space;&plus;&space;k_{sq}&space;&plus;&space;\frac{L_I^2}{k_{iq}}}&space;C_x&space;-&space;k_d&space;\frac{C_{qc}}{C_n&space;&plus;&space;K_{Np}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{dC_{qc}}{dt}&space;=&space;k_m&space;\frac{L_I}{L_I&space;&plus;&space;k_{sq}&space;&plus;&space;\frac{L_I^2}{k_{iq}}}&space;C_x&space;-&space;k_d&space;\frac{C_{qc}}{C_n&space;&plus;&space;K_{Np}}" title="\frac{dC_{qc}}{dt} = k_m \frac{L_I}{L_I + k_{sq} + \frac{L_I^2}{k_{iq}}} C_x - k_d \frac{C_{qc}}{C_n + K_{Np}}" /></a>
+
+C represents concentrations with x the biomass, n the nutrient media and qc the desired product. The two key process controls are the light intensity (<a href="https://www.codecogs.com/eqnedit.php?latex=L_I" target="_blank"><img src="https://latex.codecogs.com/gif.latex?L_I" title="L_I" /></a>) and nutrient feed flowrate (<a href="https://www.codecogs.com/eqnedit.php?latex=FC_n" target="_blank"><img src="https://latex.codecogs.com/gif.latex?FC_n" title="FC_n" /></a>). (The other variables are simply parameters in the model and for the purpose of illustrating the dynamic optimisation their physical meaning is not so important.)
+
+This kinetic model is solved by numerical integration in the Python script to simulate the bioprocess. The entire time-horizon is sub-divided into 4 for this test problem for dynamic optimisation of the light intensity and nutrient feed flowrate to be computed as piecewise-constant control actions. The selected algorithm for this dynamic optimisation is simulated annealing, as versus all the other local search algorithms this one is a global solver. This algorithm showed the best performance, hence, is the one implemented in the milestone 5 code. So far the algorithms from milestones 1-4 demonstrate unconstrained optimisation, however, to obtain physically sensible results constraints were incorporated into the simulated annealing code. The actual limits used were: 
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=0.0&space;\leq&space;FC_n&space;\leq&space;3.0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?0.0&space;\leq&space;FC_n&space;\leq&space;3.0" title="0.0 \leq FC_n \leq 3.0" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=100&space;\leq&space;L_I&space;\leq&space;300" target="_blank"><img src="https://latex.codecogs.com/gif.latex?100&space;\leq&space;L_I&space;\leq&space;300" title="100 \leq L_I \leq 300" /></a>
+
+As the dynamic optimisation model is run the following results can be seen. The animation below is a run-through of the adjustments the simulated annealing algorithm is making on each iteration. 
 
 ![](Images/BioprocessDynamicOptimisation.GIF)
